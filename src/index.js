@@ -15,6 +15,7 @@ const numbers = {
         12: 'twelve',
         13: 'thirteen',
         15: 'fifteen',
+		18: 'eighteen',
         20: 'twenty',
         30: 'thirty',
         40: 'forty', 
@@ -87,9 +88,6 @@ const numbers = {
             }else{
 				let arr = (+numArr3[1]).toString().split('');
 				if(+k === +arr[1]){
-				if(numbers[k].charAt(numbers[k].length - 1) === 't'){
-				   sec = numbers[k] + 'een';
-				}
                	   sec = numbers[k] + 'teen';
             	}
 			}	
