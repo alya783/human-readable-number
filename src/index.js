@@ -76,43 +76,55 @@ const numbers = {
 		let fir = ' ';
 		let sec = ' ';
 
+		if (+numArr3[1] < 20){
 		for (var k in numbers){
 			if( +k === +numArr3[0]){
-				fir = numbers[k] + ' hundred';
+				fir = numbers[k] + ' hundred ';
         	}
 
 			if( +k === +numArr3[1]){
-				sec = numbers[k];	
-        	} else {
-                    let integer = +numArr3[1];
-                    let arr = [];
-                    while(integer > 0){
-                        for(let j = 1; integer > 0; j *= 10){
-                        let p = (integer % 10) * j;
-                        arr.unshift(p);
-                        integer = parseInt(integer / 10);
-                        }
-                    }
-					console.log(arr);
-                    let int1 = '';
-                    let int2 = '';
-                    
-                    for (var k in numbers){
-						
-						if(+k === arr[0]){
-                        	int1 = numbers[k];
-                    	}
-
-						if(arr[1] === 0) continue;
-						
-                    	if(+k === arr[1]){
-                        	int2 = numbers[k];
-                    	} 			
-					}
-				
-                sec = int1 + " " + int2;
-            }
+				sec = numbers[k];
+            }else{
+				let arr = (+numArr3[1]).toString().split('');
+				if(+k === +arr[1]){
+				if(numbers[k].charAt(numbers[k].length - 1) === 't'){
+				   sec = numbers[k] + 'een';
+				}
+               	   sec = numbers[k] + 'teen';
+            	}
+			}	
+       	 }	
+			return fir + '' + sec;
 		}
+        
+        let integer = +numArr3[1];
+        let arr1 = [];
+        while(integer > 0){
+        for(let j = 1; integer > 0; j *= 10){
+                let p = (integer % 10) * j;
+                arr1.unshift(p);
+                integer = parseInt(integer / 10);
+            }
+        }
+					
+        let int1 = '';
+        let int2 = '';
+                    
+        for (var k in numbers){
+						
+			if(+k === arr[0]){
+                int1 = numbers[k];
+            }
+
+			if(arr[1] === 0) continue;
+						
+            if(+k === arr[1]){
+                int2 = numbers[k];
+            } 			
+		}
+				
+        sec = int1 + " " + int2;
+            
 		return (fir +" "+ sec);
 	  }
 	}
