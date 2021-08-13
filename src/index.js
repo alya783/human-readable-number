@@ -1,5 +1,5 @@
 module.exports = function toReadable (number) {
-const numbers = {
+ const numbers = {
         0: 'zero',
         1: 'one',
         2: 'two',
