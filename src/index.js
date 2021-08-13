@@ -111,6 +111,9 @@ const numbers = {
         let int2 = '';
                     
         for (var k in numbers){
+			if( +k === +numArr3[0]){
+				fir = numbers[k] + ' hundred';
+        	}
 						
 			if(+k === arr1[0]){
                 int1 = numbers[k];
@@ -124,7 +127,6 @@ const numbers = {
 		}
 				
         sec = int1 + " " + int2;
-            
 		return (fir +" "+ sec);
 	  }
 	}
