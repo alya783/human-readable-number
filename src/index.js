@@ -112,13 +112,13 @@ const numbers = {
                     
         for (var k in numbers){
 						
-			if(+k === arr[0]){
+			if(+k === arr1[0]){
                 int1 = numbers[k];
             }
 
-			if(arr[1] === 0) continue;
+			if(arr1[1] === 0) continue;
 						
-            if(+k === arr[1]){
+            if(+k === arr1[1]){
                 int2 = numbers[k];
             } 			
 		}
